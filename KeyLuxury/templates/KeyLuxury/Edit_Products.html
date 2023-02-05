@@ -1,0 +1,33 @@
+{% extends "KeyLuxury/base.html" %}
+
+{% block subtitulo %}Edit Product{% endblock subtitulo %}
+
+{% block contenido %}
+<form method="post">
+  {% csrf_token %}
+  {{ formulario.as_p }}
+  <h3> Edit Product Here!</h3>
+  <h4>{{Product.name}}</h4>
+<span>
+  <b>Price: </b> {{Product.Price}}
+</span>
+{% if Product.description %}
+<span>
+  <b>Description:</b> {{Product.description}}
+</span>
+{% endif %}
+<br><br>
+  <input>  Name</input>
+  <br>
+  <br>
+  <input>  Price</input>
+  <br>
+  <br>
+  <input>  Description</input>
+  <br>
+  <br>  <input type="submit" value=  "Send" />
+</form>
+<br>
+<a href="{% url 'Products' %}"> Back to the list</a>
+
+{% endblock contenido %}

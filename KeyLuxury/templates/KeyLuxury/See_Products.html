@@ -1,0 +1,17 @@
+{% extends "KeyLuxury/base.html" %}
+
+{% block subtitulo %}Products Details{% endblock subtitulo %}
+
+{% block contenido %}
+<h3>{{Product.name_product }}</h3>
+<br>
+{% if Products.description %}
+<span>
+  <b>Descritcion:</b> {{Products.description}}
+</span>
+{% endif %}
+<br><br>
+
+<a href="{% url 'Products' %}">Back to list</a>
+
+{% endblock contenido %}

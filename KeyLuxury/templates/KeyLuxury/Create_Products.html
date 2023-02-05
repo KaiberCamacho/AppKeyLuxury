@@ -1,0 +1,29 @@
+{% extends "KeyLuxury/base.html" %}
+
+{% block subtitulo %} Create Products{% endblock subtitulo %}
+
+{% block contenido %}
+<form method="post">
+  {% csrf_token %}
+  {{ formulario.as_p }}
+
+
+<form action="{% url 'Create_Products' %}" method="post">
+  {% csrf_token %}
+  <h3>Create a New Product</h3>
+  <input>  Name</input>
+  <br>
+  <br>
+  <input>  Price</input>
+  <br>
+  <br>
+  <input>  Description</input>
+  <br>
+  <br>
+  <input type="submit" value=  "Create" /
+  </form>
+  <br>
+  <br>
+  <a href="{% url 'Products' %}">Back to the list</a>
+
+{% endblock contenido %}

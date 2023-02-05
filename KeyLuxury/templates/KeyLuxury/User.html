@@ -1,0 +1,13 @@
+{% extends "Keyluxury/base.html" %}
+
+{% block subtitulo %} Sign up {% endblock subtitulo %}
+
+{% block contenido%}
+<form method="post">
+   {% csrf_token %}
+   {{ form.as_p }}
+  <p> User </p>
+  <input> type="text" name="Name"</input>
+  <input type="submit" value="Send" />
+  </form>
+{% endblock contenido%}
